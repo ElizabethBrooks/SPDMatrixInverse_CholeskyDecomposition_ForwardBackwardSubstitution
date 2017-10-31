@@ -6,13 +6,14 @@
 %Main function of script
 function SPDMatrixInverse_CholeskyDecomposition_ForwardBackwardSubstitution
 %%Random test matrices
-n = 4; %Set the square SPD matrix size, n
+n = 4 %Set the square SPD matrix size, n
 L = generateRandomL(n)
 A = computeRandomA(L,n)
-in = pn;
-N = inv(A)
-N = computeInverseA(C,in);
-CN = choleskyA(N,in); %Check if SPD using cholesky
+in = pn
+%N = inv(A) %Use to verify results
+%%Inverse of specified matrix
+N = computeInverseA(C,in)
+CN = choleskyA(N,in) %Check if SPD using cholesky
 detN = determinantA(CN,pn)
 %
 %Compute the lower triangular form, L, of a random square SPD matrix
